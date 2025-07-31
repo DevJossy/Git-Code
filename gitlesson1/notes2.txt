@@ -1,0 +1,90 @@
+Git init - git init creates a new Git repository.
+//Format for a new project
+        mkdir git-demo - Create
+        cd git-demo - cd means change directory.
+        git init - Creates new repository
+
+
+//Lets add a new file
+    echo "this is my first line" >example.txt - At this point, example.txt is untracked 
+
+//AT this point, the example.txt file is untracked
+//Commit the file using 
+    git commit -m "add example.txt"
+
+//Committed
+                $ git status
+            On branch main
+            nothing to commit, working tree clean
+
+//I went to GITHUB, saved the repository and copied the link. I pasted it to the terminal and the file was created. Now lets modify it.
+
+//Git status - modified: example.txt
+//After modifying it, we stage it with git add example.txt
+(Git add example.txt tells Git, "Hey, Git! I've made changes to example.txt, and I want you to include those changes in the next snapshot (commit).”)
+
+//git commit -m "add a note"
+
+//git push --
+    Lets push file/changes to github
+
+| Action            | Git Command                    | What It Does                               |
+| ----------------- | ------------------------------ | ------------------------------------------ |
+| ✏️ Edit a file    | *(use your editor)*            | You make changes to a file                 |
+| 📌 Stage the file | `git add example.txt`          | Marks it to be included in the next commit |
+| ✅ Commit          | `git commit -m "your message"` | Saves a snapshot of the project            |
+| 🚀 Push           | `git push`                     | Uploads that snapshot to GitHub            |
+
+
+
+///PERFECT
+LETS MOVE TO ANOTHER FOLDER
+To get folder named say gitlesson1, I type this into the terminal in this cycle.
+    ~/OneDrive/Desktop/PYTHON/html_course/gitlesson1
+    git init - This is to set git to track in this folder
+I got a feedback that the files are untracked and they are red in color, which means that  Git sees them in the folder but isn't tracking their changes yet.
+This means that I need to tell Git to track the files using
+    git add Index.html - Individually
+    git add. - All the files 
+            //At this point, all of them are now green in color in the terminal. 
+                //
+                //
+                //🔴 Red files = Untracked or modified, not yet staged
+                //🟢 Green files = Files that have been added to the staging area (via git add), but not yet committed
+            //Now lets commit it 
+                git commit
+    git add Index.html
+    git commit -m "Add Index.html"
+
+    You ran git add .
+✅ This staged all your files — both tracked and untracked — for commit.
+
+You ran git commit -m "Add Index.html"
+✅ This committed all the staged files — not just Index.html, but all files added with git add ..
+
+
+    //note
+    When you press;
+    git add .
+git commit -m "Add Index.html" It commits everything that was staged, and the message is just a label — it doesn't limit what gets committed.
+
+Always remember to link using the shell command 
+
+
+//PUSH Command
+This may request for credentials everytime I post a push command. 
+$ git config credential.helper cache (This goes for 15 minutes)
+git config credential.helper 'cache ==timeout == 72000'
+
+gif config --globalcredential.helper 'cache --timeout =72000'
+
+//MORE NOTES
+//STARTING OVER
+    Reinitialized your Git repo with git init.
+
+    Reconnected the remote repo from GitHub using:
+        git remote add origin https://github.com/DevJossy/Git-Code.git
+    Fetched data from the remote with git fetch origin.
+
+Reset your working directory to match the remote main branch using:
+    git reset --hard origin/main
